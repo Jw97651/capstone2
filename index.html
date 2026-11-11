@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>MovieVault | Your Personal Movie Collection</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/javascript/java.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">▶</span>
+        Movie<span>Vault</span>
+      </a>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-btn active" data-view="discover">
+          Discover
+        </button>
+        <button class="nav-btn" data-view="watchlist">
+          Watchlist
+        </button>
+        <button class="nav-btn" data-view="watched">
+          Watched
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">
+          YOUR PERSONAL MOVIE DATABASE
+        </span>
+
+        <h1>
+          Every great movie.<br>
+          <span>One place.</span>
+        </h1>
+
+        <p>
+          Discover movies, build your personal watchlist,
+          track what you've watched, and rate your favorites.
+        </p>
+
+        <form id="searchForm" class="search-form">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search for a movie..."
+            aria-label="Search movies"
+            required
+          >
+          <button type="submit">
+            Search Movies
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="library-section container">
+      <div class="stats">
+        <div class="stat">
+          <span id="watchlistCount">0</span>
+          <p>Watchlist Movies</p>
+        </div>
+
+        <div class="stat">
+          <span id="watchedCount">0</span>
+          <p>Movies Watched</p>
+        </div>
+
+        <div class="stat">
+          <span id="ratedCount">0</span>
+          <p>Movies Rated</p>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">
+            EXPLORE YOUR COLLECTION
+          </span>
+          <h2 id="sectionTitle">
+            Discover Movies
+          </h2>
+        </div>
+        <p id="resultsCount"></p>
+      </div>
+
+      <p
+        id="statusMessage"
+        class="status-message"
+        role="status"
+      ></p>
+
+      <div id="movieGrid" class="movie-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="movieDialog" class="movie-dialog">
+    <button
+      id="closeDialog"
+      class="close-dialog"
+      aria-label="Close"
+    >
+      &times;
+    </button>
+
+    <div class="dialog-layout">
+      <img
+        id="detailPoster"
+        class="detail-poster"
+        alt="Movie poster"
+      >
+
+      <div class="dialog-info">
+        <span class="eyebrow">
+          MOVIE DETAILS
+        </span>
+
+        <h2 id="detailTitle"></h2>
+
+        <p
+          id="detailMeta"
+          class="detail-meta"
+        ></p>
+
+        <p
+          id="detailDescription"
+          class="detail-description"
+        ></p>
+
+        <div class="dialog-actions">
+          <button
+            id="watchlistButton"
+            class="primary-btn"
+          >
+            + Add to Watchlist
+          </button>
+
+          <button
+            id="watchedButton"
+            class="secondary-btn"
+          >
+            Mark as Watched
+          </button>
+        </div>
+
+        <div class="rating-area">
+          <label for="ratingInput">
+            My Personal Rating
+          </label>
+
+          <select id="ratingInput">
+            <option value="0">Not rated</option>
+            <option value="1">★ 1 Star</option>
+            <option value="2">★★ 2 Stars</option>
+            <option value="3">★★★ 3 Stars</option>
+            <option value="4">★★★★ 4 Stars</option>
+            <option value="5">★★★★★ 5 Stars</option>
+          </select>
+        </div>
+
+        <a
+          id="detailLink"
+          class="movie-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View movie listing
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <p>
+      &copy; 2026 MovieVault. Built for Capstone II.
+    </p>
+    <p>
+      Discover. Watch. Rate. Repeat.
+    </p>
+  </footer>
+
+</body>
+</html>
